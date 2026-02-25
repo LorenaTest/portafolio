@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f4f4f4;
+}
+
+/* Header */
+
+.topbar {
+  background: #e0e0e0;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: bold;
+}
+
+.social a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #333;
+}
+
+/* Banner */
+
+.banner {
+  background: #cfcfcf;
+  padding: 40px;
+  text-align: center;
+}
+
+.tabs button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  background: #eaeaea;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* Layout */
+
+.layout {
+  display: flex;
+  padding: 20px;
+}
+
+/* Sidebar */
+
+.sidebar {
+  width: 200px;
+  margin-right: 20px;
+}
+
+.icon-box {
+  background: #bbb;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.sidebar button {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: none;
+  background: #d9d9d9;
+  cursor: pointer;
+}
+
+/* Content */
+
+.content {
+  flex: 1;
+}
+
+.about-box {
+  background: #777;
+  color: white;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.about-box h2 {
+  font-size: 40px;
+  text-align: center;
+}
+
+/* Cards */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.card {
+  height: 120px;
+  background: #ddd;
+  border: 1px solid #bbb;
+}
+
+.card-line {
+  height: 4px;
+  background: #bbb;
+  border-radius: 4px;
+  margin: 5px;
+}
+
+/* Footer */
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #e0e0e0;
+}
