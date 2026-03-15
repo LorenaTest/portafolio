@@ -7,10 +7,59 @@
 
 /* FUENTE Y BASE */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
   background-color: #f5f7fa;
   color: #1f2933;
   line-height: 1.6;
+}
+
+/* BOTON TEMA */
+.theme-btn {
+  margin-left: 20px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  background: #48c9b0;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.theme-btn:hover {
+  transform: scale(1.1);
+}
+
+/* MODO OSCURO */
+.dark-mode {
+  background: #121212;
+  color: #f1f1f1;
+}
+
+.dark-mode header {
+  background: #1e1e1e;
+}
+
+.dark-mode .card {
+  background: #1f1f1f;
+  color: white;
+}
+
+.dark-mode .section {
+  background: #181818;
+}
+
+.dark-mode .sidebar {
+  background: #1f1f1f;
+}
+
+.dark-mode .about-box {
+  background: #1f1f1f;
+}
+
+.dark-mode .tech-item{
+  background: #1f1f1f;
+   color: white;
 }
 
 /* TOPBAR */
@@ -90,20 +139,20 @@ body {
 
 /* LAYOUT */
 .layout {
+  flex: 1;
   display: flex;
   gap: 40px;
   padding: 60px 40px;
-  /* align-items: flex-start; */
 }
 
 /* SIDEBAR */
 .sidebar {
-  flex: 0 0 250px; 
+  flex: 0 0 250px;
   min-width: 220px;
   background-color: white;
   padding: 25px;
   border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
   height: fit-content;
 }
 
@@ -135,6 +184,11 @@ body {
 }
 
 /* CONTENT */
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
 .content h2 {
   margin-bottom: 15px;
   margin-top: 40px;
@@ -163,49 +217,61 @@ body {
   margin-bottom: 6px;
 }
 
-/* CONTENT */
-.content {
-  flex: 1;
-  min-width: 0;
-}
-
 /* ABOUT BOX */
 .about-box {
   background-color: white;
   padding: 25px;
   border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
 
-/* CARDS (PROYECTOS) */
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+/* CARDS */
 .card {
-  background-color: white;
+  background: white;
   padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-  margin-top: 20px;
-  transition: transform 0.3s ease;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: 0.35s;
+  cursor: pointer;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+
+  transform: scale(1.05);
+  background: #e8f8f5;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+
 }
 
-/* STACK TECNOLÓGICO - CAJAS */
+.card h3 {
+  color: #117864;
+  margin-bottom: 10px;
+}
+
+.card
+
+/* STACK TECNOLÓGICO */
 .tech-grid {
   display: grid;
   flex-wrap: wrap;
   gap: 12px;
-  margin-bottom: 20px;
 }
 
 .tech-item {
   background-color: #ffffff;
   border: 1px solid #e5e7eb;
-  padding: 8px 14px;
-  border-radius: 20px;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
   font-size: 14px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
   transition: all 0.3s ease;
   cursor: default;
 }
@@ -214,6 +280,35 @@ body {
   background-color: #3b82f6;
   color: white;
   transform: translateY(-3px);
+}
+
+/* CONTACT */
+.contact {
+  text-align: center;
+  padding: 80px;
+  background: #1f618d;
+  color: white;
+}
+
+/* BUTTON */
+.main-btn {
+
+  margin-top: 20px;
+  padding: 14px 35px;
+  border: none;
+  border-radius: 30px;
+  background: #48c9b0;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+
+}
+
+.main-btn:hover {
+  background: #17a589;
+  transform: scale(1.1);
+
 }
 
 /* FOOTER */
@@ -225,16 +320,13 @@ footer {
   margin-top: 40px;
 }
 
-/* ============================= */
 /* RESPONSIVE */
-/* ============================= */
-
 @media screen and (min-width:601px) and (max-width: 900px) {
   .layout {
     flex-direction: column;
   }
 
- .sidebar {
+  .sidebar {
     flex: 1;
     width: 100%;
     order: 1;
@@ -245,21 +337,22 @@ footer {
     order: 2;
   }
 
-  .card{
-        width: 45%;
+  .card {
+    width: 45%;
   }
 
 }
 
 @media screen and (max-width: 600px) {
-  nav ul li{
-        display: block;
-        margin: 10px 0;
+
+  nav ul li {
+    display: block;
+    margin: 10px 0;
   }
 
-  .card{
-        width: 100%;
-   }
+  .card {
+    width: 100%;
+  }
 
   .banner h1 {
     font-size: 1.6rem;
@@ -285,4 +378,22 @@ footer {
   .tech-grid {
     grid-template-columns: 1fr;
   }
+}
+
+@media (max-width: 768px) {
+
+  .sidebar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .sidebar button {
+    flex: 1 1 45%;
+  }
+
+  .icon-box {
+    width: 100%;
+  }
+
 }

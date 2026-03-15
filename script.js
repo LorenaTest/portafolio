@@ -1,101 +1,94 @@
-
-const botonProyectos = document.getElementById("ver-proyectos");
-function mostrarProyectos() {
-    const proyectosSection = document.getElementById("proyectos");
-    proyectosSection.scrollIntoView({ behavior: "smooth" });
-}
-botonProyectos.addEventListener("click", mostrarProyectos);
- 
- 
 // Cambiar tema
 const botonTema = document.getElementById("btn-tema");
 const cuerpoPagina = document.body;
-function alternarTema() {
-    if(cuerpoPagina.style.backgroundColor === "black") {
-        cuerpoPagina.style.backgroundColor = "white";
-        cuerpoPagina.style.color = "black"; //cambio del texto a negro
-    }else{
-        //si NO ES negro, lo cambiamos a tema negro
-        cuerpoPagina.style.backgroundColor = "black";
-        cuerpoPagina.style.color = "white"; //cambio del texto a blanco
-    }
-   
+
+function alternarTema(){
+
+    cuerpoPagina.classList.toggle("dark-mode");
+
 }
+
 botonTema.addEventListener("click", alternarTema);
- 
-// ejemplo: alerta al hacer clic de un proyecto
- 
-const todasLasTarjetas = document.querySelectorAll(".card");
- 
-todasLasTarjetas.forEach(tarjeta => {
-    tarjeta.addEventListener("click", function() {
-        const nombreProyecto = tarjeta.querySelector("h3").innerText;
-        alert("Haz hecho clic en el proyecto: " + nombreProyecto);
-    });
-});
- 
 
-// ejemplo: alerta al hacer clic de un proyecto
- 
-const todasPestanas = document.querySelectorAll(".tabs");
- 
-todasPestanas.forEach(tarjeta => {
-    tarjeta.addEventListener("click", function() {
-        const nombreProyecto = tarjeta.querySelector("button").innerText;
-        alert("Haz hecho clic en el proyecto: " + nombreProyecto);
-    });
-});
- 
+// Mensaje boton contacto
+const contactButton = document.querySelector(".main-btn")
 
-///variables: let (que puede cambiar)  - const (es fijo que no cambia)
-const nombreDev= "Pedro Roda"; // fijo  no cambia
-let proyectosCompletados = 4; // puede aumentar o disminuir  o variar en el tiempo  dependiendo del scope
- 
-// tipos primitivos
-let esInstructor = true; // boolean
-let edad = 34;  //number
-let saludo = "Hola soy Pedro Roda" //string
- 
-// tipos de datos complejos
-let habilidades = ["JavaScript", "HTML", "CSS"];
-let experiencia = {
-    años: 10,
-    empresas: ["Google", "Facebook", "Amazon"]
-};
- 
-const proyectoNuevo = {
-    nombre: "Portafolio Personal",
-    descripcion: "Un sitio web para mostrar mis proyectos y habilidades.",
-    tecnologias: ["HTML", "CSS", "JavaScript"],
-    completado: false
-};
+contactButton.addEventListener("click", function () {
 
-/// modularidad
-// controlador de interfaz
- 
-const UI = {
-    cuerpo: document.body,
- 
-    alternarColor: function() {
-        const esOscuro = this.cuerpo.style.backgroundColor === "white";
-        this.cuerpo.style.backgroundColor = esOscuro ? "black" : "white";
-        this.cuerpo.style.color = esOscuro ? "white" : "black";
-    },
-    irAseccion: function(id) {
-        document.getElementById(id).scrollIntoView({ behavior: "smooth" }); }
- 
-};
-botonTema.addEventListener("click", () => UI.alternarColor());
+    alert("Gracias por visitar mi portfolio. ¡Podemos hablar sobre QA Automation!")
 
-// delegacion  de  eventos: un solo listener para todo el contenedor de proyectos
-const contenedor = document.getElementById("content");
- 
-contenedor.addEventListener("click", function(evento){
- // .target el elemento que fue clikeado .closest busca el padre mas cercano que coincida con el selector dado
-    const tarjeta = evento.target.closest(".card");
-    if(tarjeta){
-        alert ("Haz hecho clic en un proyecto: " + tarjeta.querySelector("h3").innerText);
-    }
- 
-});
- 
+})
+
+const cards = document.querySelectorAll(".card")
+
+cards.forEach(card => {
+
+    card.addEventListener("mouseenter", () => {
+
+        card.style.transform = "scale(1.07)"
+        card.style.backgroundColor = "#d4efdf"
+
+    })
+
+    card.addEventListener("mouseleave", () => {
+
+        card.style.transform = "scale(1)"
+        card.style.backgroundColor = "white"
+
+    })
+
+})
+
+const buttons = document.querySelectorAll("button")
+
+buttons.forEach(btn => {
+
+    btn.addEventListener("mouseenter", () => {
+
+        btn.style.transform = "scale(1.12)"
+        btn.style.backgroundColor = "#1abc9c"
+
+    })
+
+    btn.addEventListener("mouseleave", () => {
+
+        btn.style.transform = "scale(1)"
+        btn.style.backgroundColor = ""
+
+    })
+
+})
+
+// MENÚ NAVEGACIÓN SCROLL SUAVE
+
+document.querySelectorAll("nav a").forEach(anchor => {
+
+    anchor.addEventListener("click", function (e) {
+
+        e.preventDefault()
+
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+
+            behavior: "smooth"
+
+        })
+
+    })
+
+})
+
+document.querySelectorAll("Div button").forEach(anchor => {
+
+    anchor.addEventListener("click", function (e) {
+
+        e.preventDefault()
+
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+
+            behavior: "smooth"
+
+        })
+
+    })
+
+})
